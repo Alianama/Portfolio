@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {ThemeSelect} from "@/components/theme/ToggleTheme";
 import React from "react";
 import CustomThemeProvider from "@/components/theme/CustomThemeprovider";
+import Dock from "@/components/dock/dock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,13 +31,13 @@ export default function RootLayout({
     <html lang="en">
     
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
      <CustomThemeProvider>
-      <ThemeSelect/>
         {children}
+         <div className="fixed top-[90%] left-1/2 transform -translate-1/2 " >
+         <Dock/>
+         </div>
      </CustomThemeProvider>
-   
       </body>
     </html>
   );
