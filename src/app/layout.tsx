@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import CustomThemeProvider from "@/components/theme/CustomThemeprovider";
-import Dock from "@/components/dock/dock";
+import DockBar from "@/components/dockbar/dockbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +31,11 @@ export default function RootLayout({
     <html lang="en">
     
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
      <CustomThemeProvider>
         {children}
-         <div className="fixed top-[90%] left-1/2 transform -translate-1/2 " >
-         <Dock/>
+         <div className="fixed max-md:bottom-0 top-[90%] left-1/2 transform -translate-1/2 " >
+         <DockBar/>
          </div>
      </CustomThemeProvider>
       </body>

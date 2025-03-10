@@ -1,28 +1,29 @@
-'use client'
+'use client';
+import {useTheme} from 'next-themes';
+import {Moon, Sun} from 'lucide-react';
+import React from 'react';
 
-import { useTheme } from 'next-themes'
-import {Moon, Sun} from "lucide-react";
+interface ThemeSelectProps {
+    classname?: string,
+    className?: string
+}
 
-export function ThemeSelect() {
-    const { theme, setTheme } = useTheme();
-
+export function ThemeSelect({ className}: ThemeSelectProps): React.JSX.Element {
+    const {theme, setTheme} = useTheme();
     const toggleTheme = () => {
         const newTheme = theme === 'dark' ? 'light' : 'dark';
         setTheme(newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-        localStorage.setItem('theme', newTheme);
     };
-
     return (
-   
         <button
             onClick={toggleTheme}
-                className="rounded-full p-0 m-0 transition duration-300">
+            className={className + " self-center w-full" }
+        >
             {theme === 'light' ? (
-                <Moon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+                <Moon className="text-neutral-900"/>
             ) : (
-                <Sun className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+                <Sun className="  "/>
             )}
         </button>
-    );  
+    );
 }
