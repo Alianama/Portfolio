@@ -18,11 +18,12 @@ export function ThemeSelect({ className}: ThemeSelectProps): React.JSX.Element {
         <button
             onClick={toggleTheme}
             className={className + " self-center w-full" }
+            
         >
             {theme === 'light' ? (
-                <Moon className="text-neutral-900"/>
+                <Moon/>
             ) : (
-                <Sun className="  "/>
+                <Sun/>
             )}
         </button>
     );

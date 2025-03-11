@@ -39,16 +39,15 @@
 @theme {
   --color-light-grey: #36393e;
   --color-milk-white: #f5efe6;
+  
 }
-
-
 
 .light{
   body{
     background-color: #f5efe6;
     /*opacity: ;*/
-    background-size: 20px 20px;
-    background-image:  repeating-linear-gradient(0deg, #ccc, #ccc 1px, #f5efe6 1px, #f5efe6);
+    /*background-size: 20px 20px;*/
+    /*background-image:  repeating-linear-gradient(0deg, #ccc, #ccc 1px, #f5efe6 1px, #f5efe6);*/
   }
 }
 
@@ -57,11 +56,11 @@
 .dark{
   body{
     /*background-color: #36393e ;*/
-    background-color: #36393e;
-    /*opacity: 0.8;*/
-    background-size: 20px 20px;
-    background-image:  repeating-linear-gradient(0deg, #302929, #302929 1px, #36393e 1px, #36393e);
-    color: #cccccc;
+    /*background-color: #36393e;*/
+    /*background-size: 20px 20px;*/
+    /*background-image:  repeating-linear-gradient(0deg, #302929, #302929 1px, #36393e 1px, #36393e);*/
+    /*color: #cccccc;*/
+    @apply bg-gradient-to-t from-[#010101] to-[#02043f];
   }
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
@@ -184,3 +183,4 @@
     @apply bg-background text-foreground;
   }
 }
+

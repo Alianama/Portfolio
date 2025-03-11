@@ -91,7 +91,7 @@ export default function DockBar() {
     return (
         <div className="flex flex-col items-center justify-center">
             <TooltipProvider>
-                <Dock direction="middle">
+                <Dock className="bg-neutral-900/80 text-milk-white" direction="middle">
                     {DATA.navbar.map((item) => (
                         <DockIcon key={item.label}>
                             <Tooltip>
@@ -142,7 +142,7 @@ export default function DockBar() {
                             <TooltipTrigger asChild>
                                 <ThemeSelect className={cn(
                                     buttonVariants({ variant: "ghost", size: "icon" }),
-                                    "size-11 rounded-full ",
+                                    "size-11 hover:text-neutral-900 rounded-full ",
                                 )} />
                             </TooltipTrigger>
                             <TooltipContent>

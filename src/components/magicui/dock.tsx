@@ -12,7 +12,7 @@ import {
 import React, { PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import {v} from "framer-motion/dist/types.d-6pKw1mTI";
+// import {v} from "framer-motion/dist/types.d-6pKw1mTI";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
