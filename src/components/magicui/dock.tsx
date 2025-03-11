@@ -48,18 +48,19 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
     const renderChildren = () => {
       return React.Children.map(children, (child) => {
-        if (React.isValidElement(child) && child.type === DockIcon) {
+        if (React.isValidElement<DockIconProps>(child)) {
           return React.cloneElement(child, {
-            ...(child.props as object), // Type assertion here
-            mouseX: mouseX,
+            ...child.props,
+            mouseX: mouseX, // Sekarang TypeScript tahu bahwa DockIcon menerima mouseX
             size: iconSize,
             magnification: iconMagnification,
             distance: iconDistance,
-          });
+          } as DockIconProps);
         }
         return child;
       });
     };
+
 
 
     return (
