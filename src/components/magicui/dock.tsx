@@ -12,7 +12,6 @@ import {
 import React, { PropsWithChildren, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-// import {v} from "framer-motion/dist/types.d-6pKw1mTI";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -51,7 +50,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         if (React.isValidElement<DockIconProps>(child)) {
           return React.cloneElement(child, {
             ...child.props,
-            mouseX: mouseX, // Sekarang TypeScript tahu bahwa DockIcon menerima mouseX
+            mouseX: mouseX,
             size: iconSize,
             magnification: iconMagnification,
             distance: iconDistance,
